@@ -1,0 +1,12 @@
+<?php
+$farmer = $_GET['farmer'] ?? '';
+$filepath = "chat_logs/{$farmer}.txt";
+
+if ($farmer && file_exists($filepath)) {
+    file_put_contents($filepath, "");
+    echo "Chat cleared.";
+} else {
+    echo "No chat to clear.";
+}
+?>
+
